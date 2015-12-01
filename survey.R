@@ -23,7 +23,7 @@ ggplot(data = surveys, aes(x=month)) + geom_bar()
 ggplot(data = surveys_comparison, aes(x=month, y=n, group = 1)) + geom_line(colour = "red", linetype = "dashed", size = 1.5 ) + geom_point(size = 5) + xlab("Month") + ylab("Total Captured") + ggtitle("Monthly Capture Rates")
 
 # Exporting figure 1
-pdf("Figure1.pdf")
+pdf("figures/Figure1.pdf")
 ggplot(data = surveys_comparison, aes(x=month, y=n, group = 1)) + geom_line(colour = "red", linetype = "dashed", size = 1.5 ) + geom_point(size = 5) + xlab("Month") + ylab("Total Captured") + ggtitle("Monthly Capture Rates")
 dev.off()
 
@@ -36,7 +36,7 @@ surveys_relationship <- surveys %>%
 ggplot(data = surveys_relationship, aes(x=hindfoot_length, y = weight, color = genus)) + geom_point() + xlab("Hindfoot Length (mm)") + ylab("Weight (g)") + ggtitle("Correlation of foot length and weight") + theme(legend.title=element_blank(),panel.grid.minor=element_blank(), panel.grid.major=element_blank())
 
 # saving Figure 2
-pdf("Figure 2.pdf")
+pdf("figures/Figure 2.pdf")
 ggplot(data = surveys_relationship, aes(x=hindfoot_length, y = weight, color = genus)) + geom_point() + xlab("Hindfoot Length (mm)") + ylab("Weight (g)") + ggtitle("Correlation of foot length and weight") + theme(legend.title=element_blank(),panel.grid.minor=element_blank(), panel.grid.major=element_blank())
 dev.off()
 
@@ -49,7 +49,7 @@ surveys_distribution <- surveys %>%
 ggplot(data = surveys_distribution, aes(x = surveys_distribution$weight)) + geom_histogram(binwidth = 1.5) + xlab("Weight (g)") + ylab("Count") + ggtitle("Weight distribution of specimens in 1997")
 
 # saving Figure 3
-pdf("Figure 3.pdf")
+pdf("figures/Figure 3.pdf")
 ggplot(data = surveys_distribution, aes(x = surveys_distribution$weight)) + geom_histogram(binwidth = 1.5) + xlab("Weight (g)") + ylab("Count") + ggtitle("Weight distribution of specimens in 1997")
 dev.off()
 
